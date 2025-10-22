@@ -1,0 +1,34 @@
+import {useState} from 'react'
+import Questao from './Questao'
+import './index.css'
+
+export default function Questionario(props){
+    const [lista, setLista]= useState(props.lista);
+    const respondeu = (id, errou)=>{
+        const novaLista= lista.map(perguntaRespondida=>{
+            if(id==perguntaRespondida.id){
+                const perguntaAlterada={...perguntaRespondida, errou: errou}
+                return perguntaAlterada
+            } else {
+                return perguntaRespondida
+            }
+        })
+        console.log("Antes:", lista);
+        setLista(novaLista);
+        console.log("Depois:", novaLista);
+    }
+    const acertos = lista.filter(pergunta=>pergunta.errou==false)
+    return <div className="questionario">
+        <h1>Questões</h1>
+        <br/>
+        <br/>
+        {lista.map(pergunta=><>
+            <Questao pergunta={pergunta.pergunta} resposta={pergunta.resposta} alteraObjetoComResposta={(errou)=>respondeu(pergunta.id, errou)}/>
+            <hr/>
+            </>
+        )}
+        <br/>
+        <h1>Resumo</h1>
+        <h3>Acertos: </h3>{acertos.length}
+    </div>
+}
