@@ -1,0 +1,62 @@
+.questionario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #034be6;                  /* cor do texto */
+    background-color: #f5f5f5;    /* cor de fundo */
+    background-image: url(''); /* imagem de fundo */
+    background-size: cover;       /* cobre toda a área */
+    background-position: center;  /* centraliza a imagem */
+    opacity: 0.8;                 /* transparência */
+
+}
+
+.pergunta {
+  border: 4px solid #ccc;
+  border-radius: 1999px;
+  padding: 15px;
+  margin: 20px;
+  width: 400px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.pergunta:hover {
+  transform: scale(1.10);
+  border-color: #007bff;
+}
+
+button {
+  padding: 10px 20px;           /* espaço interno */
+  margin: 10px;                  /* distância entre botões */
+  border: none;                  /* remove borda padrão */
+  border-radius: 12px;           /* bordas arredondadas */
+  background-color: #007bff;     /* cor de fundo */
+  color: #fff;                   /* cor do texto */
+  font-size: 16px;               /* tamanho da fonte */
+  cursor: pointer;               /* mostra mãozinha */
+  transition: all 0.3s ease;     /* animação suave */
+}
+
+button:hover {
+  background-color: #0056b3;     /* escurece o botão */
+  transform: scale(1.05);        /* aumenta levemente */
+}
+
+button:active {
+  transform: scale(0.95);        /* botão “afunda” ao clicar */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+button:disabled {
+  background-color: #000000;
+  cursor: not-allowed;
+  color: #000000;
+}
+
+button {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
